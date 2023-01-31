@@ -25,14 +25,14 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-3">แก้ไขข้อมูล</h1>
+        <h1 class="mt-3">แก้ไขข้อมูลประเภทสินค้า</h1>
         <hr>
         
-        <form action="upd_save2.php?id_type=<?=$_GET["id_employee"];?>" enctype="multipart/form-data"   method="POST">
+        <form action="upd_save2.php?id_type=<?=$_GET["id_type"];?>"  method="POST">
             <label for="fname" class="form-label">Type Name</label>
             <input class="form-control" type="text" name="name_type" value="<?php echo $row['name_type']; ?>">
             <input class="btn btn-success mt-3" type="submit" value="Update">
-            <a href="index.php" class="btn btn-primary mt-3">Go Back</a>
+            <a href="ins_form2.php" class="btn btn-primary mt-3">Go Back</a>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

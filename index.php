@@ -4,7 +4,7 @@ $ID = $_SESSION['a_id'];
 $name = $_SESSION['a_username'];
 $level = $_SESSION['a_level'];
 if($level!='A'){
-Header("Location:form_logout.php");
+Header("Location:logout.php");
 }
 ?>
 <!DOCTYPE html>

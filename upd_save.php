@@ -9,10 +9,10 @@ include('connection.php');
 $sql = "UPDATE tbl_customers  SET S_Name='$S_Name', S_LastName='$S_LastName', S_Address='$S_Address' , S_SunjectName='$S_SunjectName' WHERE c_no=$c_no";
 if ($conn->query($sql)) {
     echo "<script>alert('Record Inserted Successfully!');</script>";
-    echo "<script>window.location.href='index.php'</script>";
+    echo "<script>window.location.href='ins_form.php'</script>";
 } else {
     echo "<script>alert('Something went wrong! Please try again!');</script>";
-    echo "<script>window.location.href='index.php'</script>";
+    echo "<script>window.location.href='ins_form.php'</script>";
 }
 $conn->close();
 ?>

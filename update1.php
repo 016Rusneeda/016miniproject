@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-3">แก้ไขข้อมูล</h1>
+        <h1 class="mt-3">แก้ไขข้อมูลพนักงาน</h1>
         <hr>
         
         <form action="upd_save1.php?id_employee=<?=$_GET["id_employee"];?>" enctype="multipart/form-data"   method="POST">
@@ -40,7 +40,7 @@
             <label for="subjectname" class="form-label">Salary</label>
             <input class="form-control" type="text" name="salary_employee" value="<?php echo $row['salary_employee']; ?>">
             <input class="btn btn-success mt-3" type="submit" value="Update">
-            <a href="index.php" class="btn btn-primary mt-3">Go Back</a>
+            <a href="ins_form1.php" class="btn btn-primary mt-3">Go Back</a>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

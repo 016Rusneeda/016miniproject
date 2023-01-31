@@ -12,18 +12,35 @@
     <div class="container">
         
         <hr>
-        <h1 class="mt-5">เพิ่มข้อมูลประเภทสินค้า</h1>
+        <h1 class="mt-5">เพิ่มข้อมูลการขาย</h1>
         <hr>
         
 <div class="mb-3">
-<form  action="create2.php" method="post">
+<form  action="create3.php" method="post">
             <div class="mb-3">
-                <label for="S_Name" class="form-label">Type Name</label>
-                <input type="text" class="form-control" name="name_type" required>
+                <label for="product" class="form-label">Name Product</label>
+                <input type="text" class="form-control" name="product" required>
             </div>
+
+            <div class="mb-3">
+                <label for="vat" class="form-label">Vat</label>
+                <input type="text" class="form-control" name="vat" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="date_sale">Date</label>
+                <input type="date" class="form-control" name="date_sale" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="totolprice">Price</label>
+                <input type="text" class="form-control" name="totolprice" required>
+            </div>
+
             
+
             
-            
+
             <button type="submit">Create</button>
             <a class="btn" href="index.php">Back</a>
             </form>
@@ -37,7 +54,10 @@
 
 <tr>
 <th>no</th>
-<th>Type Name</th>
+<th>Name Product</th>
+<th>Vat</th>
+<th>Data</th>
+<th>Price</th>
 <th>Action</th>
 
 
@@ -46,17 +66,22 @@
 <tbody>
 <?php
 include('connection.php');
-$sql = "SELECT * FROM tbl_type_product";
+$sql = "SELECT * FROM tbl_sale";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 //แสดงข้อมูลเป็นตาราง
 while($row = $result->fetch_assoc()) {
 
 echo '<tr>';
-echo '<td>'. $row['id_type'] . '</td>';
-echo '<td>'. $row['name_type'] . '</td>';
-echo '<td><a role="button"  href="update2.php?id_type='.$row['id_type'].'" class="btn btn-warning">Update</a> ';  //ปุ่มที่เพิ่มเข้ามา
-    echo '<a href="delete2.php?id_type='.$row['id_type'].'" class="btn btn-danger">delete</a>';  //ปุ่มที่เพิ่มเข้ามา
+echo '<td>'. $row['id_sale'] . '</td>';
+echo '<td>'. $row['product'] . '</td>';
+echo '<td>'. $row['vat'] . '</td>';
+echo '<td>'. $row['date_sale'] . '</td>';
+echo '<td>'. $row['totolprice'] . '</td>';
+
+
+echo '<td><a role="button"  href="update3.php?id_sale='.$row['id_sale'].'" class="btn btn-warning">Update</a> ';  //ปุ่มที่เพิ่มเข้ามา
+    echo '<a href="delete3.php?id_sale='.$row['id_sale'].'" class="btn btn-danger">delete</a>';  //ปุ่มที่เพิ่มเข้ามา
 echo '</tr>';
 }
 } else {

@@ -12,18 +12,27 @@
     <div class="container">
         
         <hr>
-        <h1 class="mt-5">เพิ่มข้อมูลประเภทสินค้า</h1>
+        <h1 class="mt-5">เพิ่มข้อมูลสินค้า</h1>
         <hr>
         
 <div class="mb-3">
-<form  action="create2.php" method="post">
+<form  action="create4.php" method="post">
             <div class="mb-3">
-                <label for="S_Name" class="form-label">Type Name</label>
-                <input type="text" class="form-control" name="name_type" required>
+                <label for="name_product" class="form-label">Name Product</label>
+                <input type="text" class="form-control" name="name_product" required>
             </div>
-            
-            
-            
+
+            <div class="mb-3">
+                <label for="type_product" class="form-label">Type</label>
+                <input type="text" class="form-control" name="type_product" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="price_product">Price</label>
+                <input type="price_product" class="form-control" name="price_product" required>
+            </div>
+
+
             <button type="submit">Create</button>
             <a class="btn" href="index.php">Back</a>
             </form>
@@ -37,7 +46,9 @@
 
 <tr>
 <th>no</th>
-<th>Type Name</th>
+<th>Name Product</th>
+<th>Type</th>
+<th>Price</th>
 <th>Action</th>
 
 
@@ -46,17 +57,22 @@
 <tbody>
 <?php
 include('connection.php');
-$sql = "SELECT * FROM tbl_type_product";
+$sql = "SELECT * FROM tbl_products";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 //แสดงข้อมูลเป็นตาราง
 while($row = $result->fetch_assoc()) {
 
 echo '<tr>';
-echo '<td>'. $row['id_type'] . '</td>';
-echo '<td>'. $row['name_type'] . '</td>';
-echo '<td><a role="button"  href="update2.php?id_type='.$row['id_type'].'" class="btn btn-warning">Update</a> ';  //ปุ่มที่เพิ่มเข้ามา
-    echo '<a href="delete2.php?id_type='.$row['id_type'].'" class="btn btn-danger">delete</a>';  //ปุ่มที่เพิ่มเข้ามา
+echo '<td>'. $row['id_product'] . '</td>';
+echo '<td>'. $row['name_product'] . '</td>';
+echo '<td>'. $row['type_product'] . '</td>';
+echo '<td>'. $row['price_product'] . '</td>';
+
+
+
+echo '<td><a role="button"  href="update4.php?id_product='.$row['id_product'].'" class="btn btn-warning">Update</a> ';  //ปุ่มที่เพิ่มเข้ามา
+    echo '<a href="delete4.php?id_product='.$row['id_product'].'" class="btn btn-danger">delete</a>';  //ปุ่มที่เพิ่มเข้ามา
 echo '</tr>';
 }
 } else {

@@ -12,7 +12,7 @@
     <div class="container">
         <a href="index.php" class="btn btn-primary mt-3">Go Back</a>
         <hr>
-        <h1 class="mt-5">เพิ่มข้อมูล</h1>
+        <h1 class="mt-5">เพิ่มข้อมูลลูกค้า</h1>
         <hr>
         
 <div class="mb-3">

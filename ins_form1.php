@@ -12,7 +12,7 @@
     <div class="container">
         
         <hr>
-        <h1 class="mt-5">เพิ่มข้อมูล</h1>
+        <h1 class="mt-5">เพิ่มข้อมูลพนักงาน</h1>
         <hr>
         
 <div class="mb-3">

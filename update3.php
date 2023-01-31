@@ -1,15 +1,15 @@
 <?php 
     session_start();
     include('connection.php');
-    $id = $_GET['c_no'];
-    $sql = "select * from tbl_customers where c_no='$id'";
+    $sale = $_GET['id_sale'];
+    $sql = "select * from tbl_sale where id_sale='$sale'";
     $result = $conn->query($sql);
     
     $row;
     
     if($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $_SESSION['c_no'] = $id;
+        $_SESSION['id_sale'] = $sale;
     }
 ?>
 
@@ -25,20 +25,20 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-3">แก้ไขข้อมูลลูกค้า</h1>
+        <h1 class="mt-3">แก้ไขข้อมูลการขาย</h1>
         <hr>
         
-        <form action="upd_save.php?c_no=<?=$_GET["c_no"];?>" enctype="multipart/form-data"   method="POST">
-            <label for="fname" class="form-label">First Name</label>
-            <input class="form-control" type="text" name="S_Name" value="<?php echo $row['S_Name']; ?>">
-            <label for="lname" class="form-label">Last Name</label>
-            <input class="form-control" type="text"  name="S_LastName" value="<?php echo $row['S_LastName']; ?>">
-            <label for="address" class="form-label">Address</label>
-            <input class="form-control" type="text" name="S_Address" value="<?php echo $row['S_Address']; ?>">
-            <label for="subjectname" class="form-label">Subject Name</label>
-            <input class="form-control" type="text" name="S_SunjectName" value="<?php echo $row['S_SunjectName']; ?>">
+        <form action="upd_save3.php?id_sale=<?=$_GET["id_sale"];?>"   method="POST">
+            <label for="fname" class="form-label">Name product</label>
+            <input class="form-control" type="text" name="product" value="<?php echo $row['product']; ?>">
+            <label for="lname" class="form-label">Vat</label>
+            <input class="form-control" type="text"  name="vat" value="<?php echo $row['vat']; ?>">
+            <label for="address" class="form-label">Date</label>
+            <input class="form-control" type="text" name="date_sale" value="<?php echo $row['date_sale']; ?>">
+            <label for="subjectname" class="form-label">Price</label>
+            <input class="form-control" type="text" name="totolprice" value="<?php echo $row['totolprice']; ?>">
             <input class="btn btn-success mt-3" type="submit" value="Update">
-            <a href="ins_form.php" class="btn btn-primary mt-3">Go Back</a>
+            <a href="ins_form3.php" class="btn btn-primary mt-3">Go Back</a>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
